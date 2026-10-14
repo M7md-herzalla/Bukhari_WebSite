@@ -1,0 +1,542 @@
+html {
+    min-height: 100vh;
+  scroll-behavior: smooth;
+  background-color: #14524D;
+}
+body {
+      min-height: 100vh;
+        margin: 20px;
+    padding-top: 120px;
+    background-color: #FAF7EF;
+    color: #303830;
+}
+.mainHeader{
+        background-color: #F2EBDD;
+        
+    width: 100%;
+   
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #B59555;
+    box-shadow: 0 4px 12px rgba(20, 82, 77, 0.12);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.logo{
+    width: 10%;
+    background-color: #FAF7EF;
+    padding: 20px;
+    border-right:1px solid  #B59555;
+ box-shadow: none;;
+
+}
+
+.logo img{
+   
+    object-fit:contain;
+    width: 100%;
+    height: 100%;
+}
+.logo img:hover{
+    transform: scale(1.09);
+}
+.headerList {
+    padding: 20px;
+    display: flex;
+    
+    width: 90%;
+}
+.headerList nav{
+    align-self: center;
+    display: flex;
+    width: 100%;
+   justify-content:space-around;
+}
+.headerList nav a{
+
+    color: #14524D;;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+    text-shadow: 2px 4px 8cqb #14524D;
+    font-size: 35px;
+}
+.headerList nav a:hover{
+    transform: translateY(-3px);
+    color: hsla(0, 0%, 7%, 0.641);
+    text-shadow: 2px 4px 25px #B59555;
+  
+}
+#biography{
+    width: 100%;
+    border-bottom: 2px solid #B59555;
+  
+}
+.biography-intro{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+.biography-content{
+    margin: 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 2px 4px 8px rgba(20, 82, 77, 0.4);
+    padding: 40px;
+}
+#biography-title{
+    text-align: center;
+}
+.biography-content p{
+    font-size: 18px;
+}
+
+.biography-images{
+    justify-items: center;
+    height: 100%;
+}
+.biography-image{
+     width: 70%;
+    
+    object-fit: contain;
+    text-align: center;
+}
+.biography-image img{
+     width: 100%;
+    height: 50%;
+      object-fit: contain;
+}
+.biography-image img:hover{
+    transform: scale(1.02);
+}
+.book-image{
+        
+ text-align: center;
+    width: 70%;
+    height: 30%;
+}
+.book-image img{
+    text-align: center;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+.book-image img:hover{
+        transform: scale(1.02);
+
+}
+.books-container {
+    direction: rtl;
+    display: grid;
+    gap: 20px;
+    align-items: start;
+
+    width: 60%;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+
+
+
+
+
+.book-card {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    
+
+    background-color: #F2EBDD;
+    border: 1px solid #B59555;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(20, 82, 77, 0.1);
+}
+
+.book-card-wide {
+    grid-column: 1 / -1;
+}
+
+.book-dropdown summary {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 24px;
+    background-color: #fbfbfb;
+    border-radius: 14px;
+
+    color: #14524D;
+    cursor: pointer;
+    list-style: none;
+}
+.book-dropdown{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.book-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.book-number {
+    padding: 8px 12px;
+    background-color: #14524D;
+    color: #FAF7EF;
+    border-radius: 8px;
+}
+
+.book-title {
+    flex: 1;
+    min-width: 0;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.book-arrow {
+    font-size: 26px;
+    transition: transform 0.2s;
+}
+
+.book-dropdown[open] > summary {
+    border-bottom: 1px solid #B59555;
+}
+
+.book-dropdown[open] > summary .book-arrow {
+    transform: rotate(90deg);
+}
+
+.book-chapters {
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 10px;
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 16px;
+}
+
+.book-chapters.hadith-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+
+.book-chapters a {
+    display: block;
+    padding: 16px;
+  
+
+   
+    background-color: #FAF7EF;
+    color: #14524D;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.8;
+
+    transition:
+        background-color 0.5s,
+        color 0.5s;
+}
+
+
+
+.book-chapters a:hover {
+    background-color: #14524D;
+    color: #FFFFFF;
+}
+
+/* حركة الفتح والإغلاق */
+.book-dropdown {
+    interpolate-size: allow-keywords;
+}
+
+.book-dropdown::details-content {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    transition:
+        height 0.4s ease,
+        opacity 0.4s ease,
+        content-visibility 0.4s allow-discrete;
+}
+
+.book-dropdown[open]::details-content {
+    height: auto;
+    opacity: 1;
+}
+
+
+.book-dropdown summary:focus-visible,
+.book-chapters a:focus-visible {
+    outline: 2px solid #14524D;
+    outline-offset: -4px;
+}
+.book-dropdown summary:hover{
+    background-color: hsla(0, 17%, 95%, 0.705);
+}
+
+/* الشاشات الأصغر */
+@media (max-width: 900px) {
+    .book-chapters.hadith-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .book-chapters.hadith-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.method-section{
+    --method-green: #14524D;
+    --method-cream: #FAF7EF;
+    --method-paper: #F2EBDD;
+    --method-gold: #B59555;
+
+
+  width:    90%;
+    justify-self: center;
+    margin: 70px;
+    padding: 20px;
+    scroll-margin-top: 140px;
+     color: #303830;
+
+
+}
+.method-section,
+.method-section *{
+    box-sizing: border-box;
+}
+.method-heading{
+    margin-top: 30px;
+    margin-right: 150px;
+}
+.method-heading h2 {
+    margin: 8px 0 12px;
+    color: var(--method-green);
+    font-size: clamp(28px, 4vw, 42px);
+}
+.method-heading p {
+    margin: 0;
+    line-height: 1.9;
+}
+.method-heading >p:first-child{
+    color: #76613A;
+}
+.method-grid {
+  
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: 330px 330px;
+    gap: 20px;
+}
+.method-card-1 {
+    grid-column: 1 / 8;
+    grid-row: 1;
+}
+.method-card-2 {
+    grid-column: 8 / 13;
+    grid-row: 1/3;
+}
+.method-card-3 {
+    grid-column: 1 / 5;
+    grid-row: 2;
+}
+.method-card-4 {
+    grid-column: 5 / 8;
+    grid-row: 2;
+}
+.method-card {
+    position: relative;
+    min-width: 0;
+    perspective: 1200px;
+    transition: transform 0.25s ease;
+}
+@media (hover: hover) {
+    .method-card:hover {
+        transform: translateY(-4px);
+    }
+}
+.method-toggle,.method-sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: none;
+}
+.method-card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style:preserve-3d ;
+    transition: transform 0.7s ease;
+
+}
+.method-toggle:checked ~ .method-card-inner {
+    transform: rotateY(180deg);
+}
+.method-face {
+    position: absolute;
+    inset: 0;
+    padding: 26px;
+    border: 1px solid var(--method-gold);
+    border-radius: 18px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    box-shadow: 0 5px 15px rgba(20, 82, 77, 0.13);
+    overflow: hidden;
+    transition: visibility 0s 0.35s;
+}
+.method-front {
+    display: flex;
+    align-items: flex-end;
+    color: var(--method-cream);
+    background-color: var(--method-green);
+    background-image:
+        linear-gradient(180deg, rgba(12, 48, 45, 0.08), rgba(12, 48, 45, 0.94)),
+        var(--card-image, linear-gradient(135deg, #236C61, #14524D));
+    background-size: cover;
+    background-position: center;
+}
+.method-front::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: -85px;
+    left: -85px;
+    border: 1px solid rgba(213, 190, 140, 0.5);
+    border-radius: 50%;
+    box-shadow: 0 0 0 28px rgba(213, 190, 140, 0.06);
+}
+.method-number {
+    position: absolute;
+    top: 12px;
+    right: 24px;
+    color: rgba(242, 235, 221, 0.18);
+    font-size: 100px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+.method-front-content {
+    position: relative;
+}
+.method-front h3 {
+    margin: 8px 0 18px;
+    font-size: clamp(23px, 2.4vw, 32px);
+    line-height: 1.5;
+}
+method-front p {
+    margin: 0;
+    color: #E4D5B5;
+    line-height: 1.7;
+}
+
+.method-hint {
+    display: block;
+    font-size: 15px;
+    line-height: 1.8;
+}
+.method-back {
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    transform: rotateY(180deg);
+    background: var(--method-paper);
+}
+
+.method-back h3 {
+    margin: 0 0 14px;
+    color: var(--method-green);
+    font-size: 23px;
+    line-height: 1.6;
+}
+.method-back p {
+    margin: 0 0 18px;
+    font-size: 17px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+.method-back .method-hint {
+    margin-top: auto;
+    color: #76613A;
+}
+.method-toggle:checked ~ .method-card-inner .method-front {
+    visibility: hidden;
+}
+.method-toggle:checked ~ .method-card-inner .method-back {
+    visibility: visible;
+}
+.method-flip-label{
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.method-toggle:focus-visible ~ .method-flip-label {
+    outline: 3px solid var(--method-gold);
+    outline-offset: 5px;
+}
+
+@media (max-width: 900px) {
+    .method-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: none;
+        grid-auto-rows: 540px;
+        
+    }
+     .method-grid > .method-card {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+@media (max-width: 600px) {
+    .method-section {
+        padding: 0 16px;
+    }
+
+    .method-grid {
+        grid-template-columns: minmax(0, 1fr);
+        grid-auto-rows: 520px;
+    }
+
+    .method-face {
+        padding: 24px;
+    }
+
+    .method-front h3 {
+        font-size: 28px;
+    }
+}
+@charsetmedia (max-width: 360px) {
+    .method-grid {
+        grid-auto-rows: 540px;
+    }
+
+    .method-face {
+        padding: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .method-card,
+    .method-card-inner,
+    .method-face {
+        transition: none;
+    }
+}
